@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>EECE 496 Presentation 4</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+	</head>
+
+	<body>
+		<div id="impress" class="reveal">
+		<div id="canvas"></div>
+			
+			<div class="slides">
+				<section>
+					<h2>Interactive Public Display</h2>
+					<br />
+					<p>Jack Wu</p>
+					<p>Murtadha Al-Tameemi</p>
+				</section>
+
+				<section>
+					<blockquote>Complete a <strong><i>web application framework</i></strong> that provides a <strong><i>common interface</i></strong> between mobile and web applications</blockquote>
+				</section>
+
+				<section>
+					<section data-state="blackout">
+						<h2>Current Progress</h2>
+					</section>
+					<section data-state="blackout">
+						<h3 class="fragment">iOS App</h3>
+						<br />
+						<ul>
+							<li class="fragment">Added GPS, added camera modes (sepia, monochrome)</li>
+							<li class="fragment">Finalized common interface for <b><u>triggering</u></b> resources and <b><u>sending</u></b> resource data</li>
+						</ul>
+					</section>
+					<section data-state="blackout">
+						<h3 class="fragment">Mobile Platform Independence</h3>
+						<br />
+						<p class="fragment">Tested common interface for web apps on iOS and Android</p>
+					</section>										
+					<section data-state="blackout">
+						<h3 class="fragment">Android App</h3>
+						<br />
+						<ul>
+							<li class="fragment">Refactored and cleaned up code</li>							
+							<li class="fragment">Fixed bugs</li>
+						</ul>
+					</section>
+				</section>
+				
+				<section>
+					<section data-state="soothe">
+						<h2>Next Step</h2>
+					</section>
+					<section data-state="soothe">
+						<h3 class="fragment">Web Application</h3>
+						<br />
+						<p class="fragment">Final Demo: Music Player, Photo Gallery, Simulation Apps</p>
+					</section>
+				</section>
+				<section>
+					<a class="image" target="_blank">
+						<img width="750" height="650" src="http://3.jnwuservlet.appspot.com/gantt_chart_final_5.png" alt="Meny">
+					</a>
+				</section>
+				<section>
+					<a class="image" target="_blank">
+						<img width="1000" height="500" src="http://3.jnwuservlet.appspot.com/m_gantt_5.png" alt="Meny">
+					</a>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+		<script>
+			Reveal.initialize({
+				controls: false,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+		</script>
+		
+		<script type="text/javascript" src="thingbroker-jquery-plugin/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="thingbroker-jquery-plugin/jquery.thingbroker.js"></script>
+		<script>
+			var canvasCallback = function (param) {	
+				var audio = param['audio'];
+			
+				if(audio == "next") 
+					Reveal.next();
+					
+				if(audio == "previous") 
+					Reveal.prev();
+			}
+			
+			var impressCallback = function (param) {
+				var text = param['text'];
+				
+				if(text == "next") 
+					Reveal.next();		
+					
+				if(text == "prev") 
+					Reveal.prev();					
+			}
+			
+			$("#impress").thing({listen: true, debug: true, eventCallback: impressCallback});
+			$("#canvas").thing({listen: true, debug: true, eventCallback: canvasCallback});
+		</script>
+
+	</body>
+</html>
