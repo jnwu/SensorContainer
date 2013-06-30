@@ -1,5 +1,5 @@
-SensorContainerApplications
-===========================
+SensorContainer-App
+===================
 
 This repo contains demo applications for the Interactive Web Application framework.
 
@@ -10,11 +10,19 @@ Significance
 ------------
 This repo works coherently with the SensorContainer (https://github.com/jnwu/SensorContainer), and the jQuery plugin (https://github.com/ubc-magic/thingbroker-jquery-plugin).
 
-
-
-Supported Applications
-----------------------
-This repo contains three demo applications,
+This repo contains three demo apps,
 * Presentation Application
 * Driving Simulation Application
 * Music Player Application
+
+Furthermore, this repo contains the mobile web client apps.
+
+
+Third-Party Dependencies
+------------------------
+The following third-party libraries have been integrated,
+* reveal.js: https://github.com/hakimel/reveal.js/
+* impress.js: https://github.com/bartaz/impress.js/
+* CubicVR.js: https://github.com/cjcliffe/CubicVR.js/
+* mediaelement.js: http://mediaelementjs.com/
+* coverflow.js: https://github.com/luwes/js-cover-flow
