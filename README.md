@@ -1,14 +1,13 @@
 SensorContainer-App
 ===================
 
-This repo contains demo applications for the Interactive Web Application framework.
-
+This repo contains demo apps for the Interactive Web Application framework.
 This repo also contains server side tests for the ThingBroker. The tests are specifically made for SoapUI (http://sourceforge.net/projects/soapui/files/soapui/4.5.1/)
 
 
 Significance
 ------------
-This repo works coherently with the SensorContainer (https://github.com/jnwu/SensorContainer), and the jQuery plugin (https://github.com/ubc-magic/thingbroker-jquery-plugin).
+This repo works coherently with the SensorContainer (https://github.com/jnwu/SensorContainer-iOS), and the jQuery plugin (https://github.com/ubc-magic/thingbroker-jquery-plugin).
 
 This repo contains three demo apps,
 * Presentation Application
