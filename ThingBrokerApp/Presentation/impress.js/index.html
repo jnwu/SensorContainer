@@ -1,0 +1,177 @@
+<!doctype html>
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale = 1.0;">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Presentation</title>
+    
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+    <link href="css/impress-demo.css" rel="stylesheet" />
+    
+	<script type="text/javascript" src="jquery-1.7.2.min.js"></script>  
+	<script type="text/javascript" src="jquery.broker.js"></script>  
+
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+</head>
+
+<body class="impress-not-supported" onload="">
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress" class="impress">
+
+
+    <div class="step" data-x="500" data-y="-1500">
+		<q>
+			<strong><b>INTERACTIVE PUBLIC DISPLAY</b></strong>
+			</br>
+			</br>
+			</br>
+			Jack Wu
+			</br>
+			Murtadha Al-Tameemi
+		</q>
+    </div>
+
+    <div class="step" data-x="2000" data-y="-1500">
+		<q>Provide a <b>common interface</b> between mobile device and web applications</q>
+    </div>
+		
+    <div class="step" data-x="3500" data-y="-1500">
+		<q>Develop mobile applications that expose mobile resources</q>
+    </div>
+
+    <div class="step" data-x="3500" data-y="-1500">
+		<q>
+			</br>
+			</br>
+			</br>
+			</br>
+			<b>Accelerometer</b>
+		</q>
+    </div>
+	
+    <div class="step" data-x="3500" data-y="-1500">
+		<q>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			<b>Microphone</b>
+		</q>
+    </div>
+
+    <div class="step" data-x="3500" data-y="-1500">
+		<q>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			<b>Camera</b>
+		</q>
+    </div>
+
+    <div class="step" data-x="5000" data-y="-1500">
+		<q>Ensure jQuery plugin allows <b>publish/subscribe</b> data to thing broker</q>
+    </div>
+	
+    <div id="its-in-3d" class="step" data-x="5000" data-y="-1000" data-z="1200" data-rotate-x="-40" data-rotate-y="40">
+        <p>
+		Transferred files between <b>mobile</b> and <b>web</b> applications
+		</p>
+    </div>
+	
+    <div class="step" data-x="6750" data-y="-1000" data-z="1200" data-rotate-x="-40" data-rotate-y="40">
+        <p>
+		Sanity tested for the common interface on <b>iOS</b> and <b>Windows</b>
+		</p>
+    </div>
+
+    <div class="step" data-x="8500" data-y="-1000" data-z="1200" data-rotate-x="-40" data-rotate-y="40">
+        <p>
+		Integrated jQuery plugin, motion sensing, and WebGL
+		</p>
+    </div>
+	
+    <div class="step" data-x="8000" data-y="-1500">
+        <p>
+		Testing common interface on Android
+		<br />
+		<br />
+		as next step
+		</p>
+    </div>
+
+    <div class="step" data-x="8000" data-y="-1500">
+        <p>
+		Integrating speech recognition
+		</p>
+    </div>
+
+    <div class="step slide" data-x="9500" data-y="-1500">
+		<img src="gantt_chart_final.png" style="padding-left:0px; " width="775" height="620"/>		
+    </div>
+</div>
+
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+</div>
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+}
+</script>
+
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+
+<script type="text/javascript">
+	$(".impress").broker({listen:true});
+	
+	var data = function (param) {
+	
+		var api = impress();
+
+		if(api != null) {
+			if(param == "next") {
+				api.next();			
+			} 
+			
+			if(param == "previous") {
+				api.prev();						
+			}
+		}
+	}
+</script>
+
+<!--
+    var api = impress();
+    
+    
+        `api.init()` - initializes the presentation,
+        `api.next()` - moves to next step of the presentation,
+        `api.prev()` - moves to previous step of the presentation,
+        `api.goto( idx | id | element, [duration] )` - moves the presentation to the step given by its index number
+                id or the DOM element; second parameter can be used to define duration of the transition in ms,
+                but it's optional - if not provided default transition duration for the presentation will be used.    
+-->
+
+</body>
+</html>
+
+
+
+
